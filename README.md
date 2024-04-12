@@ -3,4 +3,4 @@
 ![Design and Development2](https://github.com/Richardbarbosasilva/Configswitches/blob/main/Previews/Screenshot_2.png)
 
 # Login-Registration-Form
-Responsive Login &amp; Registration Form Using HTML &amp; CSS &amp; Bootstrap &amp; JS .Sliding Sign In &amp; Sign Up Form
+Desktop made Login &amp; Registration Form Using HTML &amp; CSS &amp; Bootstrap &amp; JS .Sliding Sign In &amp; Sign Up Form
