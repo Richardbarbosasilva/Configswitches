@@ -1,2 +1,5 @@
-# Configswitches
-This web application will have the goal to let technicians config switches in a more easier and faster way. 
+# preview
+development = https://github.com/Richardbarbosasilva/Configswitches
+
+#main
+This web application will allow to config L2, L3 with MPLS or not in a more easier way
