@@ -1,5 +1,5 @@
 # Preview
-![Design and Development](https://github.com/Richardbarbosasilva/Configswitches/blob/main/Previews/screenshot1.png)
+![Design and Development](https://github.com/Richardbarbosasilva/Configswitches/blob/main/Previews/screenshot_1.png)
 
 # Login-Registration-Form
 Responsive Login &amp; Registration Form Using HTML &amp; CSS &amp; JS .Sliding Sign In &amp; Sign Up Form
