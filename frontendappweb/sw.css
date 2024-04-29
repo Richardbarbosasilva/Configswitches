@@ -38,7 +38,6 @@ img, svg {
     margin-left: 1800px;
     margin-top: -650px;
     cursor: pointer;
-    
 }
 
 /* imagens dos switches */
@@ -46,7 +45,7 @@ img, svg {
 .img-fluid {
     width: 600px;
     height: auto;
-    margin-top: 70px;
+    margin-top: 100px;
     background-color: transparent;
     border-radius: 20% !important;
     margin-left: 15px !important;
@@ -60,7 +59,7 @@ img, svg {
     max-width: 100%;
     width: 600px;
     height: auto;
-    margin-top: 50px;
+    margin-top: 100px;
     background-color: transparent;
     border-radius: 20% !important;
     margin-left: 300px !important;
@@ -176,6 +175,7 @@ img, svg {
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #0d6efd;
     --bs-btn-disabled-border-color: #0d6efd;
+    z-index: 100;
 }
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
@@ -202,6 +202,7 @@ body {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     background-size: cover;
+    background-color: grey;
 }
 
 /* imagem de fundo */
@@ -250,12 +251,14 @@ body {
 }
 
 
+/* footer area */
+
 footer {
-    border-top: white;
     background-color: black;
 	color: #fff;
 	text-align: center;
-	margin-top: 120px !important;
+	margin-top: 90px !important;
+    margin-bottom: -25px;
     padding: 10px;
 }
 
@@ -275,7 +278,7 @@ footer {
 }
 
 .logo1 {
-    margin-bottom: -170px;
+    margin-bottom: -220px;
     margin-left: 20px;
 }
 
@@ -517,47 +520,51 @@ footer {
 
 /* technical documentation icon */
 
-.gg-profile,
-.gg-profile::after,
-.gg-profile::before {
- display: block;
- box-sizing: border-box;
- border: 2px solid;
- border-radius: 100px;
- position: fixed !important;
-}
-
-.gg-profile {
- overflow: hidden;
- transform: scale(var(--ggs,1));
- width: 22px;
- height: 22px;
- position: fixed !important;
- margin-top: -170px;
- margin-left: 56px;
- display: block;
-}
-
-.gg-profile::after,
-.gg-profile::before {
- content: "";
- display: block;
- position: fixed;
- top: 2px;
- left: 5px;
- width: 8px;
- height: 8px
-}
-
-.gg-profile::after {
- border-radius: 200px;
- top: 11px;
- left: 0px;
- width: 18px;
- height: 18px;
- position:fixed !important;
- display: block !important;
-} 
+.gg-file-document {
+    box-sizing: border-box;
+    position: fixed;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 14px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-right: 0;
+    border-top: 0;
+    margin-top: -170px;
+    margin-left: 60px;
+    box-shadow: 0 0 0 2px;
+    border-radius: 1px;
+    border-top-right-radius: 4px;
+    overflow: hidden
+   }
+   
+   .gg-file-document::after,
+   .gg-file-document::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+   }
+   
+   .gg-file-document::before {
+    background: currentColor;
+    box-shadow:
+    0 4px 0,
+    -6px -4px 0;
+    left: 0;
+    width: 10px;
+    height: 2px;
+    top: 8px
+   }
+   
+   .gg-file-document::after {
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    right: -1px;
+    top: -1px
+   } 
 
 /* about icon */
 
@@ -912,3 +919,4 @@ margin-bottom: 190px;
 font-size: 16px;
 font-family: 'geneva'; 
 }
+

@@ -184,3 +184,7 @@
       });
   };
 })(jQuery, window, document);
+
+function showMessage() {
+    alert("Você tem certeza que deseja enviar as seguintes configurações globais ao DM2104?");
+}

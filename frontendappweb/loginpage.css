@@ -61,8 +61,15 @@ form.sign-in-form {
   background-image: transparent !important;
   margin-left: -100px;
   margin-top: 50px;
-  transition: opacity 1s ease-in-out !important;
-  transition-delay: 2s;
+  animation: animation-login 2s;
+}
+@keyframes animation-login {
+  0% {
+    opacity: 0; /* Começa com opacidade 0 */
+  }
+  100% {
+    opacity: 1; /* Termina com opacidade 1 (totalmente opaco) */
+  }
 }
 
 .title {
@@ -90,6 +97,7 @@ form.sign-in-form {
   color: #acacac;
   transition: 0.5s;
   font-size: 1.1rem;
+  
 }
 
 .input-field input {
@@ -100,6 +108,9 @@ form.sign-in-form {
   font-weight: 600;
   font-size: 1.1rem;
   color: #333;
+  height: 35px;
+  margin-top: 10px;
+
 }
 
 .input-field input::placeholder {

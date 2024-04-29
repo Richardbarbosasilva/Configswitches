@@ -8,6 +8,7 @@
  Project: https://github.com/chniter/bstreeview
 */
 .bstreeview {
+
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -15,37 +16,20 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: transparent;
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
-
     padding: 0;
     overflow: hidden;
     
 }
 
-.bstreeview .list-group {
-    margin-bottom: 0;
-
-}
-
-.bstreeview .list-group-item {
-    border-radius: 0;
-    border-width: 1px 0 0 0;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    cursor: pointer;
-
-}
-
-.bstreeview .list-group-item:hover {
-    background-color:#dee2e6;
-
-}
-
 .bstreeview > .list-group-item:first-child {
     border-top-width: 0;
+    background: transparent !important;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color:transparent;
 
 }
 
@@ -64,64 +48,205 @@
     -ms-flex: 0 0 50%;
     flex: 0 0 30%;
     max-width: 50%;
-    margin-left: -400px;
-
+    margin-left: -405px;
+    margin-top: -20px;
 }
+#container {
+    overflow-y: scroll;
+    height: 300px; /* Define the container's height */
+    color: black;
+  }
+.logoswitch {
 
-.logoswitch{
 font-weight: 700;
 margin-left: 45%;
 font-family: Arial, Helvetica, sans-serif;
-margin-top:-40px;
+margin-top: 0px;
 
 }
 
-.logoswitchphrase {
+.logoswitchphrasedmL3 {
+
 display: block;
 font-family: Arial, Helvetica, sans-serif;
 margin-top:-50px;
 font-size: 18px;
 margin-left: 15px;
+}
 
+
+.logoswitchphrasedmL2 {
+display: block;
+font-family: Arial, Helvetica, sans-serif;
+margin-top:-50px;
+font-size: 18px;
+margin-left: 5px;
 }
     
+.warning {
+    left: 600px !important;
+    bottom: 600px !important;
+    text-align: justify;
+    width: 700px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    background-color: #292929; /* Set background color */
+    margin: 50px auto; /* Add margin for spacing */
+    border: 2px solid black; /* Add border */
+    padding: 8px; /* Add padding around text */
+    text-align: center;
+    margin-top: 50px; 
+    color: white;
+    animation: animacao-texto 40s forwards;
+    position: fixed !important;
+    font-size: 13px;
+    display:inline-flex ;
+    z-index: 1000 !important;
+
+    }
+
+      /* animations must be declared with sintax "animation: name-of-animation + duration (seconds)"
+      , plus use @keyframes sintaxe to describe the animation that will be used */
+
+      @keyframes animacao-texto {
+        10% {
+          opacity: 1 ; /* Começa com opacidade 0 */
+        }
+        25% {
+          opacity: 1 ; /* Termina com opacidade 1 (totalmente opaco) */
+        }
+
+        30% {
+        opacity: 0;
+        }
+        
+        from { opacity: 0.1; }
+        to { opacity: 1.0; opacity: 0.0; }
+      
+
+      }
+  
+.sendconfig {
+border-color: black; 
+background: linear-gradient(90deg, rgb(7, 2, 114) 0%, rgba(9,9,121,1) 35%, rgba(10,62,128,1) 100%);
+margin-left: 30px;
+margin-top: 0px;
+}
+
+/* left border menu of the page */ 
+
+.leftmenu {
+    left: 100px;
+    top:47px;
+    bottom: 200px;
+    position: fixed;
+    width: 315px;
+    height: 950px;
+    background-color: rgb(2,0,36);
+    z-index: -1000 !important;
+    margin-left: -100px;
+}
+
+.sendconfig:hover {
+
+background: rgb(29, 29, 147);
+
+}
+
+.homepage {
+    
+    margin-top: -180px;
+    background: rgb(2,0,36);
+
+}
+
+.homepagebar1 {
+
+    color: #fff !important;
+    font-weight: 700;
+    font-family:  Sans Mono, monospace;
+    font-size: large;
+}
+
+.homepagebar2 {
+
+    font-weight: 700;
+    font-family:  Sans Mono, monospace;
+    margin-top: 1px;
+    font-size: large;
+}
+
+.bstreeview .list-group-item {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    color: lightgrey;
+    font-weight: 500;
+ background-color: rgb(2,0,36);
+}
+
+/* :hover pseudoclass to let the background color change when we pass the cursor on it*/
+.bstreeview .list-group-item:hover {
+   
+    border-top: 1px solid black !important; 
+    background: rgb(29, 29, 147);
+}
+
+/* icons */
+
+.fa-folder:before {
+
+    content: "\f07b";
+    color:rgb(250, 146, 18);
+    
+}
+
+.fa-server:before {
+
+    content: "\f233";
+    color: #fff;
+
+}
 
 
 
+#clickipnavbarswitchconfig {
 
+    width: 140px;
+    height: 55px;
+    z-index: -1;
+    margin-left: 70px;
+    display: block;
+    margin-top: -50px;
 
+}
 
+.breadcrumb-item.active {
 
+    color: #6c757d;
+    margin-left: 0px;
 
+}
 
+.homepagebar1 {
 
+    color: #fff !important;
+    font-weight: 700;
+    font-family: Sans Mono, monospace;
+    font-size: large;
+    margin-left: 300px;
 
+}
 
+.breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    color: #6c757d;
+    content: "/";
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.bstreeview > .list-group-item:first-child:hover {
+    border-top-width: 0;
+ background-color: rgb(20, 20, 122) !important;}
 
 
 

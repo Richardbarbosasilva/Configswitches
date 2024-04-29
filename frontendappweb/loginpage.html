@@ -10,6 +10,9 @@
       crossorigin="anonymous">
     </script>
   </head>
+
+  <!-- Loginpage -->
+
   <body>
     <div class="container">
       <div class="forms-container">
@@ -18,10 +21,16 @@
             <h2 class="title">Bem-Vindo!</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
+
+              <!-- input type id username pode ser chamado pelo id no arquivo js loginpage.js -->
+
               <input type="text" id="username" name="username" placeholder="Usuário" required>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
+
+             <!-- input type id password pode ser chamado pelo id no arquivo js loginpage.js -->
+
               <input type="password" id="password" name="password" placeholder="Senha" required>
             </div>
             <button type="submit" class="btn btn-primary">ENTRAR</button>
@@ -33,10 +42,6 @@
       </div>
     </div>
     
-
-
-
-
   </body>
 
   <script src="./loginpage.js"></script>

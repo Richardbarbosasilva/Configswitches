@@ -78,11 +78,55 @@ window.location.href = "https://datacom.com.br/uploads/product/file/ce66c518601a
 }
 
 
-function redirecionarParaOutraPagina() {
+function dm4370config() {
     //html destiny after button click
 
-    window.location.href = "swconfig.html";
+    window.location.href = "dm4370config.html";
 }
+
+function dm4360config() {
+  //html destiny after button click
+
+  window.location.href = "dm4360config.html";
+}
+
+function dm2104config() {
+  //html destiny after button click
+
+  window.location.href = "dm2104config.html";
+}
+
+function dm2500config() {
+  //html destiny after button click
+
+  window.location.href = "dm2500config.html";
+}
+
+function dm4615config() {
+  //html destiny after button click
+
+  window.location.href = "dm4615config.html";
+}
+
+function dm2106config() {
+
+  //html destiny after button click
+  window.location.href = "dm2106config.html"
+}
+
+function dm4270config() {
+
+  //html destiny after button click
+  window.location.href = "dm4270config.html"
+}
+
+function dm4618config() {
+  //html destiny after button click
+
+  window.location.href = "dm4618config.html";
+}
+
+
 
 function clickipnavbarlogo() {
     window.location.href = "sw.html";
