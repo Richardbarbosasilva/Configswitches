@@ -1,0 +1,607 @@
+    /*
+    @preserve
+    bstreeview.css
+    Version: 1.2.0
+    Authors: Sami CHNITER <sami.chniter@gmail.com>
+    Copyright 2020
+    License: Apache License 2.0
+    Project: https://github.com/chniter/bstreeview
+    */
+
+    .bstreeview {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+    border-radius: .25rem;
+    padding: 0;
+    overflow: hidden;    
+    }
+
+    .bstreeview > .list-group-item:first-child {
+    border-top-width: 0;
+    background: transparent !important;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color:transparent;
+    }
+
+   .bstreeview .state-icon {
+    margin-right: 8px;
+    width: 12px;
+    text-align: center;
+    }
+
+   .bstreeview .item-icon {
+    margin-right: 5px;
+    }
+
+   .col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 30%;
+    max-width: 50%;
+    margin-left: -405px;
+    margin-top: -20px;
+    }
+
+    #container {
+    overflow-y: scroll;
+    height: 300px; /* Define the container's height */
+    color: black;
+    }
+
+    .logoswitch {
+    font-weight: 900;
+    margin-left: 1000px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+    
+    }
+
+    .logoswitchphrasedmL3 {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top:-50px;
+    font-size: 18px;
+    margin-left: 3px;
+    }
+
+    .logoswitchphrasedmL2 {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top:-50px;
+    font-size: 18px;
+    margin-left: 5px;
+    }
+    
+    .warning {
+    left: 750px !important;
+    bottom: 600px !important;
+    text-align: justify;
+    width: 700px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    background-color: black; /* Set background color */
+    margin: 50px auto; /* Add margin for spacing */
+    border: 2px solid black; /* Add border */
+    padding: 8px; /* Add padding around text */
+    text-align: center;
+    margin-top: 50px; 
+    color: white;
+    animation: animacao-texto 40s forwards;
+    position: absolute !important;
+    font-size: 13px;
+    display:inline-flex ;
+    z-index: 1000 !important;
+    }
+
+    /* animations must be declared with sintax "animation: name-of-animation + duration (seconds)"
+    , plus use @keyframes sintaxe to describe the animation that will be used */
+
+    @keyframes animacao-texto {
+
+    10% {
+    opacity: 1 ; /* Começa com opacidade 0 */
+    }
+    25% {
+    opacity: 1 ; /* Termina com opacidade 1 (totalmente opaco) */
+    }
+    30% {
+    opacity: 0;
+    }
+    from { opacity: 0.1; }
+    to { opacity: 1.0; opacity: 0.0; }
+    }
+  
+    .sendconfig {
+    border-color: black; 
+    background: linear-gradient(90deg, rgb(7, 2, 114) 0%, rgba(9,9,121,1) 35%, rgba(10,62,128,1) 100%);
+    margin-left: 30px;
+    margin-top: 0px;
+    }
+
+/* left border menu of the page */ 
+
+    .leftmenu {
+    left: 100px;
+    top:47px;
+    bottom: 200px;
+    position: absolute;
+    width: 315px;
+    height: 1500px;
+    background-color: rgb(2,0,36);
+    z-index: -1000 !important;
+    margin-left: -100px;
+    }
+
+    .sendconfig:hover {
+    background: rgb(29, 29, 147);
+    }
+
+    .homepage {
+    margin-top: -180px;
+    background: rgb(2,0,36);
+    height: 50px;
+    }
+
+    .homepagebar1 {
+    color: #fff !important;
+    font-weight: 700;
+    font-family:  Sans Mono, monospace;
+    font-size: large;
+    }
+
+    .homepagebar2 {
+    font-weight: 700;
+    font-family:  Sans Mono, monospace;
+    margin-top: 1px;
+    font-size: large;
+    }
+
+    .bstreeview .list-group-item {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    color: lightgrey;
+    font-weight: 500;
+    background-color: rgb(2,0,36);
+    }
+
+    /* :hover pseudoclass to let the background color change when we pass the cursor on it*/
+    .bstreeview .list-group-item:hover {
+    border-top: 1px solid black !important; 
+    background: rgb(29, 29, 147);
+    }
+
+    /* icons */
+
+   .fa-folder:before {
+    content: "\f07b";
+    color:rgb(250, 146, 18);
+    }
+
+    .fa-server:before {
+    content: "\f233";
+    color: #fff;
+    }
+
+    #clickipnavbarswitchconfig {
+    width: 140px;
+    height: 55px;
+    z-index: -1;
+    margin-left: 70px;
+    display: block;
+    margin-top: -50px;
+    }
+
+    .breadcrumb-item.active {
+    color: #6c757d;
+    margin-left: 0px;
+    }
+
+    .homepagebar1 {
+    color: #fff !important;
+    font-weight: 700;
+    font-family: Sans Mono, monospace;
+    font-size: large;
+    margin-left: 300px;
+    }
+
+    .breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    color: #6c757d;
+    content: "/";
+    }
+
+    .bstreeview > .list-group-item:first-child:hover {
+    border-top-width: 0;
+    background-color: rgb(20, 20, 122) !important;
+    }
+
+
+    /* Buttons of info and redirect to script page */
+
+    .topologiamenu {
+    color: darkblue;
+    position: absolute;
+    margin-left: 200px;
+    font-size: 28px;
+    left: 720px !important;
+    bottom: 550px !important;
+    text-align: justify;
+    font-weight: 800;
+    font-family: monospace;
+    }
+
+    /* topologias icons */
+
+    .topologiaicon {
+          
+        left: 500px !important;
+        bottom: 405px; 
+        position:absolute;
+        display: flex;
+    }
+
+    .topologiaicon2 {
+          
+        left: 850px !important;
+        bottom: 405px; 
+        position: absolute;
+    }
+    
+    .topologiaicon3 {
+          
+        left: 1150px !important;
+        bottom: 405px; 
+        position: absolute;
+    }
+
+    .topologiaicon4 {
+          
+        left: 1500px !important;
+        bottom: 405px; 
+        position: absolute;
+    }
+
+    .topologiaicon5 {
+          
+        left: 1150px !important;
+        bottom: 255px; 
+        position: absolute;
+    }
+
+    
+    .topologiaicon6 {
+          
+        left: 850px !important;
+        bottom: 255px; 
+        position: absolute;
+    }
+
+/* topologias buttons */ 
+
+    .buttontopologiaicon {
+        display: block;
+        position: absolute !important;
+        left: 600px!important;
+        height: 55px;
+        bottom: 410px;
+        border-width: 1px; 
+        border-color: blue;
+        border-radius: 0.3rem;
+        background-color: rgb(20, 20, 122);
+        color:white;
+        font-weight: 600;
+        
+       
+    }
+    
+
+    .buttontopologiaicon:hover {
+       
+        background-color: rgb(20, 20, 72);
+       
+
+    } 
+
+    .buttontopologiaicon2 {
+        display: block;
+        position: absolute !important;
+        left: 950px!important;
+        height: 55px;
+        bottom: 410px;
+        border-width: 1px; 
+        border-color: blue;
+        border-radius: 0.3rem;
+        background-color: rgb(20, 20, 122);
+        color:white;
+        font-weight: 600;
+       
+    }
+    
+  
+    .buttontopologiaicon2:hover {
+       
+        background-color: rgb(20, 20, 72);
+       
+
+    } 
+
+    .buttontopologiaicon3 {
+        display: block;
+        position: absolute !important;
+        left: 1250px!important;
+        height: 55px;
+        bottom: 410px;
+        border-width: 1px; 
+        border-color: blue;
+        border-radius: 0.3rem;
+        background-color: rgb(20, 20, 122);
+        color:white;
+        font-weight: 600;
+       
+    }
+    
+    
+    .buttontopologiaicon3:hover {
+       
+        background-color: rgb(20, 20, 72);
+       
+    } 
+ 
+    .buttontopologiaicon4 {
+        display: block;
+        position: absolute !important;
+        left: 1600px!important;
+        height: 55px;
+        bottom: 410px;
+        border-width: 1px; 
+        border-color: blue;
+        border-radius: 0.3rem;
+        background-color: rgb(20, 20, 122);
+        color:white;
+        font-weight: 600;
+      
+    }
+    
+
+    .buttontopologiaicon4:hover {
+       
+        background-color: rgb(20, 20, 72);
+       
+
+    } 
+
+  
+    .buttontopologiaicon5 {
+        display: block;
+        position: absolute !important;
+        left: 1250px!important;
+        height: 55px;
+        bottom: 260px;
+        border-width: 1px; 
+        border-color: blue;
+        border-radius: 0.3rem;
+        background-color: rgb(20, 20, 122);
+        color:white;
+        font-weight: 600;
+        
+      
+    }
+    
+
+    .buttontopologiaicon5:hover {
+       
+        background-color: rgb(20, 20, 72);
+       
+
+    } 
+
+    .buttontopologiaicon6 {
+        display: block;
+        position: absolute !important;
+        left: 950px!important;
+        height: 55px;
+        bottom: 260px;
+        border-width: 1px; 
+        border-color: blue;
+        border-radius: 0.3rem;
+        background-color: rgb(20, 20, 122);
+        color:white;
+        font-weight: 600;
+       
+    }
+    
+
+    .buttontopologiaicon6:hover {
+       
+        background-color: rgb(20, 20, 72);   
+    } 
+
+    .linhacentral {
+    width: 1300px;
+    height: 3px;
+    background-color: rgb(20, 20, 122);
+    left: 450px !important;
+    position: absolute !important;
+    top: 580px;
+    z-index: 1000  !important;
+    display: block !important ;
+    }
+
+
+    .fixcarddropdown {
+    left: 0px !important;
+    bottom: 0px !important;
+    position: absolute;
+
+    }
+
+    .cardflow {
+    z-index: 1000 !important;
+    }
+
+    .dropdown-toggle::after {
+        display: inline-block;
+        margin-left: .255em;
+        vertical-align: .255em;
+        content: "";
+        border-top: .3em solid;
+        border-right: .3em solid transparent;
+        border-bottom: 0;
+        border-left: .3em solid transparent;
+
+    }
+
+/* cards */
+
+.card-text {
+ font-size: 16px;
+ font-weight: 600;
+ font-family: 'Times New Roman';
+ text-align: justify !important;
+}
+
+
+.cardsize {
+    width: 550px !important;
+    min-height: 300px !important;
+    max-height: auto;
+    animation-name: card;
+    animation-duration: 2s;
+}
+
+.metrobutton {
+    background-color: rgb(20, 20, 122);
+
+}
+
+/* animation of above cards */
+
+@keyframes card {
+    0% {
+        opacity: 0 ; /* Começa com opacidade 0 */
+        }
+        100% {
+        opacity: 1 ; /* Termina com opacidade 1 (totalmente opaco) */
+        }
+        from { opacity: 0.1; }
+        to { opacity: 1.0 }
+}
+
+
+.networkicon {
+margin-top: 100px;
+
+}
+
+
+/* DM 4370 SCRIPTGENERATOR.HTML */
+
+.homepagescript {
+    height: 50px;
+    margin-top: -290px;
+    background: rgb(2, 0, 36);
+}
+
+
+.logoswitchscript {
+
+    font-weight: 900;
+    margin-left: 955px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -20px;
+
+}
+
+    .logoswitchphrasedmL3script {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -20px;
+    font-size: 18px;
+    margin-left: 10px;
+    }
+
+
+  .warningscript {
+
+    left: 700px !important;
+    bottom: 500px !important;
+    text-align: justify;
+    width: 700px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    background-color: black; /* Set background color */
+    margin: 50px auto; /* Add margin for spacing */
+    border: 2px solid black; /* Add border */
+    padding: 8px; /* Add padding around text */
+    text-align: center;
+    margin-top: 50px; 
+    color: white;
+    animation: animacao-texto 40s forwards;
+    position: absolute !important;
+    font-size: 13px;
+    display:inline-flex ;
+    z-index: 1000 !important;
+
+  } 
+
+/* gg profile icon */
+
+  .gg-profile,
+  .gg-profile::after,
+  .gg-profile::before {
+   display: block;
+   box-sizing: border-box;
+   border: 2px solid;
+   border-radius: 100px;
+   position: absolute;
+   left: 1140px;
+  }
+  
+  .gg-profile {
+   overflow: hidden;
+   transform: scale(var(--ggs,1));
+   width: 22px;
+   height: 22px;
+   position: relative;
+   color: white;
+  }
+  
+  .gg-profile::after,
+  .gg-profile::before {
+   content: "";
+   position: absolute;
+   top: 2px;
+   left: 5px;
+   width: 8px;
+   height: 8px;
+   color: white;
+  }
+  
+  .gg-profile::after {
+   border-radius: 200px;
+   top: 11px;
+   left: 0px;
+   width: 18px;
+   height: 18px;
+   color:white;
+  } 
+
+  .profiletext {
+    font-size: 13px;
+    font-weight: 700;
+    color:white;
+    bottom: 100px !important;
+    top: 100px !important;
+    margin-left: 980px;
+    margin-top: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+
