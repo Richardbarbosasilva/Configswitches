@@ -1,0 +1,516 @@
+CPE - ICOM %(EMP)/(ISP)% - NAME (RAZÃO SOCIAL) - MANAUS | COMPENSA
+
+SWITCHS
+
+DM4370 (L3/MPLS)
+
+		aaa authentication-order [ local tacacs ]
+		!
+		aaa server tacacs SERVER-TACACS
+		 host 143.137.92.114
+		 authentication
+		 authorization
+		 accounting
+		 shared-secret $7$kAPMAXqGDgvx0t27r6JLplKkSoMD/Kvx
+		 source interface loopback-0
+		!
+		mpls ldp
+		 lsr-id loopback-0
+		  interface l3-*L3_V4052*
+		  !
+		  neighbor targeted *100.127.0.3*
+		  !
+		 !
+		!
+		snmp system contact noc@clickip.com.br
+		snmp system location *Manaus-AM*
+		no snmp traps config-commit
+		snmp traps cpu-core
+		snmp traps cpu-load
+		no snmp traps link-status
+		no snmp traps login-fail
+		no snmp traps login-success
+		snmp agent enabled
+		snmp agent version v2c
+		snmp community ClickIP
+		 sec-name ClickIP
+		!
+		snmp target SNMP-Trap-Server
+		 ip 131.255.11.137
+		 tag [ std_v2_trap ]
+		 v2c sec-name ClickIP
+		!
+		snmp notify std_v2_trap
+		 tag std_v2_trap
+		!
+		snmp vacm group ClickIP
+		 member ClickIP
+		  sec-model [ v2c ]
+		 !
+		 access "" v2c no-auth-no-priv
+		  context-match prefix
+		  read-view root
+		  write-view root
+		  notify-view root
+		 !
+		!
+		snmp vacm view root
+		 subtree 1.3
+		  included
+		 !
+		!
+		interface gigabit-ethernet 1/1/1
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 100M
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix auto
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/2
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 100M
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix auto
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/3
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 100M
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix auto
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/4
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 100M
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix auto
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/5
+		 description LINK-IP
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/6
+		 description LINK-IP-BKP
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/7
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/8
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface ten-gigabit-ethernet 1/1/1
+		 description *PTP-COROADO*
+		 no shutdown
+		 no negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface ten-gigabit-ethernet 1/1/2
+		 no shutdown
+		 no negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface ten-gigabit-ethernet 1/1/3
+		 description LINK-IP
+		 no shutdown
+		 no negotiation
+		 duplex full
+		 speed 10G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface ten-gigabit-ethernet 1/1/4
+		 no shutdown
+		 no negotiation
+		 duplex full
+		 speed 10G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface l3 *L3_V4052*
+		 description *"P2P - DM4270-24XS+3CX-COROADO"*
+		 ip-mtu 9198
+		 lower-layer-if vlan *4052*
+		 ipv4 address *100.127.2.110/30*
+		!
+		interface mgmt 1/1/1
+		 ipv4 address 192.168.0.25/24
+		!
+		interface loopback 0
+		 ipv4 address *100.127.0.69/32*
+		!
+		clock timezone BRA -4
+		hostname *DM4370-ICOM-EMP-REDE_AMAZONICA*
+		telnet-server disabled
+		loopback-detection
+		 destination-address alternative
+		!
+		mac-address-table
+		 aging-time 600
+		!
+		layer2-control-protocol
+		 tunnel-mac datacom
+		 tunnel-priority 7
+		!
+		sntp client
+		sntp server 143.137.92.139
+		vrf global
+		!
+		vrf mgmt
+		!
+		router ospf 1 vrf global
+		 router-id *100.127.0.69*
+		 area 0
+		  interface l3-*L3_V4052*
+		   network-type point-to-point
+		  !
+		  interface loopback-0
+		  !
+		 !
+		!
+		dot1q
+		 vlan *4052*
+		  interface ten-gigabit-ethernet-1/1/1
+		  !
+		 !
+
+DM4370 (L3/MPLS=2X)
+
+		aaa authentication-order [ local tacacs ]
+		!
+		aaa server tacacs SERVER-TACACS
+		 host 143.137.92.114
+		 authentication
+		 authorization
+		 accounting
+		 shared-secret $7$kAPMAXqGDgvx0t27r6JLplKkSoMD/Kvx
+		 source interface loopback-0
+		!
+		mpls ldp
+		 lsr-id loopback-0
+		  interface l3-*L3_V4052*
+		  !
+		  interface l3-*L3_V4054*
+		  !
+		  neighbor targeted *100.127.0.3*
+		  !
+		 !
+		!
+		snmp system contact noc@clickip.com.br
+		snmp system location *Manaus-AM*
+		no snmp traps config-commit
+		snmp traps cpu-core
+		snmp traps cpu-load
+		no snmp traps link-status
+		no snmp traps login-fail
+		no snmp traps login-success
+		snmp agent enabled
+		snmp agent version v2c
+		snmp community ClickIP
+		 sec-name ClickIP
+		!
+		snmp target SNMP-Trap-Server
+		 ip 131.255.11.137
+		 tag [ std_v2_trap ]
+		 v2c sec-name ClickIP
+		!
+		snmp notify std_v2_trap
+		 tag std_v2_trap
+		!
+		snmp vacm group ClickIP
+		 member ClickIP
+		  sec-model [ v2c ]
+		 !
+		 access "" v2c no-auth-no-priv
+		  context-match prefix
+		  read-view root
+		  write-view root
+		  notify-view root
+		 !
+		!
+		snmp vacm view root
+		 subtree 1.3
+		  included
+		 !
+		!
+		interface gigabit-ethernet 1/1/1
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 100M
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix auto
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/2
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 100M
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix auto
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/3
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 100M
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix auto
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/4
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 100M
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix auto
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/5
+		 description LINK-IP
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/6
+		 description LINK-IP-BKP
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/7
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface gigabit-ethernet 1/1/8
+		 no shutdown
+		 negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface ten-gigabit-ethernet 1/1/1
+		 description *PTP-COROADO*
+		 no shutdown
+		 no negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface ten-gigabit-ethernet 1/1/2
+		 description *PTP-ADRIANOPOLIS*
+		 no shutdown
+		 no negotiation
+		 duplex full
+		 speed 1G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface ten-gigabit-ethernet 1/1/3
+		 description LINK-IP
+		 no shutdown
+		 no negotiation
+		 duplex full
+		 speed 10G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface ten-gigabit-ethernet 1/1/4
+		 no shutdown
+		 no negotiation
+		 duplex full
+		 speed 10G
+		 advertising-abilities 10Mfull 100Mfull 1Gfull
+		 mdix normal
+		 mtu 12266
+		!
+		interface l3 *L3_V4052*
+		 description *"P2P - DM4270-24XS+3CX-COROADO"*
+		 ip-mtu 9198
+		 lower-layer-if vlan *4052*
+		 ipv4 address *100.127.2.110/30*
+		!
+		interface l3 *3_V4054*
+		 description *"P2P - DM4270-6x48-ADRIANOPOLIS"*
+		 ip-mtu 9198
+		 lower-layer-if vlan *4054*
+		 ipv4 address *100.127.2.114/30*
+		!
+		interface mgmt 1/1/1
+		 ipv4 address 192.168.0.25/24
+		!
+		interface loopback 0
+		 ipv4 address *100.127.0.69/32*
+		!
+		clock timezone BRA -4
+		hostname *DM4370-ICOM-EMP-REDE_AMAZONICA*
+		telnet-server disabled
+		loopback-detection
+		 destination-address alternative
+		!
+		mac-address-table
+		 aging-time 600
+		!
+		layer2-control-protocol
+		 tunnel-mac datacom
+		 tunnel-priority 7
+		!
+		sntp client
+		sntp server 143.137.92.139
+		vrf global
+		!
+		vrf mgmt
+		!
+		router ospf 1 vrf global
+		 router-id *100.127.0.69*
+		 area 0
+		  interface l3-*L3_V4052*
+		   network-type point-to-point
+		  !
+		  interface l3-*L3_V4054*
+		   network-type point-to-point
+		  !
+		  interface loopback-0
+		  !
+		 !
+		!
+		dot1q
+		 vlan *4052*
+		  interface ten-gigabit-ethernet-1/1/1
+		  !
+		 !
+		 vlan *4054*
+		  interface ten-gigabit-ethernet-1/1/2
+		  !
+		 !
+		!
+
+DM2104 (L2)
+		
+		hostname ICOM-MULTIPLAS(EMP)-MANAUS|DISTRITO-II
+		!
+		!
+		clock timezone BR -4
+		!
+		*vlan qinq* (adicionar menu solicitandando se vai ter qinq ou não)
+		!
+		interface vlan 1
+		 name DefaultVlan
+		 set-member untagged ethernet range 1/3 1/4
+		 set-member untagged ethernet range 1/7 1/8
+		!
+		interface vlan *1002*
+		 name manager-interface
+		 ip address *172.25.8.210/24*
+		 set-member tagged ethernet range 1/1 1/2
+		!
+		interface vlan *1218*
+		 set-member tagged ethernet range 1/1 1/2
+		 set-member untagged ethernet range 1/5 1/6
+		!
+		vlan-group 1
+		vlan-group 1 vlan all
+		!
+		interface ethernet range 1/1 1/2
+		 description UPLINK
+		 no negotiation
+		!
+		interface ethernet range 1/5 1/6
+		 description LINK-IP
+		 switchport native vlan *1218*
+		!
+		interface mgmt-eth
+		 ip address 192.168.0.25/24
+		!
+		no remote-devices enable
+		!
+		ip default-gateway *172.25.8.1*
+		!
+		ip telnet server  
+		no ip http server
+		no ip http secure-server
+		ip ssh server
+		!
+		ip snmp-server
+		ip snmp-server community public ro
+		!
+		sntp client
+		sntp server 143.137.92.139 
+		!
+		authentication login local tacacs
+		tacacs-server host 1 address 143.137.92.114
+		tacacs-server host 1 key qYYjIZUJpAjJ
+		tacacs-server host 1 authentication
+		tacacs-server host 1 authorization
+		tacacs-server host 1 accounting
+		!        
+
+ROTEADOR
+
+DM2500 (L3)

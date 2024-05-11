@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div>
+        <input type="checkbox" id="change-phrase-checkbox"> Click me to change the phrase!
+        <br>
+        <span id="changeable-phrase">This is the original phrase.</span>
+      </div>
+    
+
+      <script>
+        const checkbox = document.getElementById("change-phrase-checkbox");
+const phraseSpan = document.getElementById("changeable-phrase");
+
+checkbox.addEventListener("click", function() {
+  const newPhrase = this.checked ? "Phrase changed!" : "This is the original phrase.";
+  phraseSpan.textContent = newPhrase;
+});
+      </script>
+</body>
+</html>
