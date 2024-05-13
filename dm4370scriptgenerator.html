@@ -110,16 +110,12 @@
             <input type="text" id="cliente" maxlength="20" name="name" placeholder="Insira o Hostname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>        
             </p>
 			
-
-         
-            
             <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox" class="product shadow-sm text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  " type="button">
                 <span id="changeable-phrase">Escolha o Produto (Permite múltiplas escolhas)</span>
                 <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
                 </button>
-                
                 
                 <!-- Dropdown menu -->
 
@@ -215,9 +211,6 @@
             </p>
             </p>
 
-
-          
-
     <!--VLAN ASK-->
 
     <input type="radio" id="radiocheck1" name="size" value="default">
@@ -244,13 +237,7 @@
 
    <input type="text" id="numerovlan cpe" maxlength="1" name="name" placeholder="Informe a porta de conexão CPE" class="numbervlan3 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light " required>        
 
-      
-   
-   
-
-
 <!--metrospeeddropdown-->
-
 
 <button id="dropdownMETRO" data-dropdown-toggle="dropdownDivider" class="productmetro text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><p class="textmetro">Escolha a velocidade da rede METRO</p><svg class="svgmetro w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
@@ -274,12 +261,8 @@
           </div>
         </li>
   </div>
-  
-
-
 
    <!--cpespeeddropdown-->
-
    
 <button id="dropdownCPE" data-dropdown-toggle="dropdown" class="productcpe text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><p class="textcpe">Escolha a velocidade da porta CPE</p> <svg class="svgcpe w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
@@ -291,8 +274,8 @@
       <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
         <li>
           <div class="flex items-center">
-              <input type="checkbox" class="change-phrase-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" id="cpespeed" value="1000FULL ">
-              <label for="checkbox-item-1" class=" ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">1000 FULL </label>
+              <input type="checkbox" class="change-phrase-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" id="cpespeed" value="100FULL ">
+              <label for="checkbox-item-1" class=" ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">100 FULL </label>
             </div>
         </li>
 
@@ -304,80 +287,14 @@
         </li>
       </ul>
   </div>
-  
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
    <!--numerovlanmenu-->
 
-            <input type="text" id="numerovlan" maxlength="4" name="name" placeholder="Informe o número da VLAN" class="numbervlan shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light " required>        
-            <p class="formsadvice textvlan">Informar número da Vlan (2 a 4094)			
-          
-        </div>
-        <button id="showMessageButton" class="btn btn-primary sendconfig2" onclick="showMessage()" type="button">Deseja prosseguir com as configurações e gerar script?</button>
+    <input type="text" id="numerovlan" maxlength="4" name="name" placeholder="Informe o número da VLAN" class="numbervlan shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light " required>        
+    <p class="formsadvice textvlan">Informar número da Vlan (2 a 4094)			    
+    </div>
+    <button id="showMessageButton" class="btn btn-primary sendconfig2" onclick="showMessage()" type="button">Deseja prosseguir com as configurações e gerar script?</button>
     </form>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     <div class="d-grid gap-2 d-md-block">
     </div>
@@ -387,4 +304,5 @@
     <script src="https://unpkg.com/imask@6/dist/imask.min.js"></script>
     <script src="swconfig.js"></script>
 </body>
+
 </html>
