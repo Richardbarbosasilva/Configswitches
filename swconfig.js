@@ -232,3 +232,181 @@ function gotoscriptpage () {
   window.location.href = "dm4370scriptgenerator.html"
 
 }
+  
+//Block some inputs on the field, logic
+
+const elementIds = ['circuito'];
+
+for (const id of elementIds) {
+  const element = document.getElementById(id);
+
+  element.addEventListener('input', function() {
+    const allowedChars = /[A0-Z9_]/; // Allowed characters (adjust as needed)
+    let newInput = '';
+
+    for (let char of this.value) { // Use 'this' to access current element's value
+      if (allowedChars.test(char)) {
+        newInput += char;
+      }
+    }
+
+    element.value = newInput;
+  });
+}
+
+// client input field exception
+
+const cliente = document.getElementById('cliente');
+
+cliente.addEventListener('input', function() {
+  const allowedChars = /[A-Z0-9-_]/; // Allowed characters (adjust as needed)
+  let newInput = '';
+
+  for (let char of this.value) { // Use 'this' to access the cliente element's value
+    if (allowedChars.test(char)) {
+      newInput += char;
+    }
+  }
+
+  cliente.value = newInput;
+});
+
+//Porta Rede Metro logic input field 
+
+const portmetro = document.getElementById('numerovlan metro');
+
+portmetro.addEventListener('input', function() {
+  const allowedChars = /[1-4]/; // Allowed characters (adjust as needed)
+  let newInput = '';
+
+  for (let char of this.value) { // Use 'this' to access the cliente element's value
+    if (allowedChars.test(char)) {
+      newInput += char;
+    }
+  }
+
+  portmetro.value = newInput;
+});
+
+//Porta Rede Cpe logic input field 
+
+const portcpe = document.getElementById('numerovlan cpe');
+
+portcpe.addEventListener('input', function() {
+  const allowedChars = /[5-8]/; // Allowed characters (adjust as needed)
+  let newInput = '';
+
+  for (let char of this.value) { // Use 'this' to access the cliente element's value
+    if (allowedChars.test(char)) {
+      newInput += char;
+    }
+  }
+
+  portcpe.value = newInput;
+});
+
+// Número da Vlan input field
+
+const vlan = document.getElementById('numerovlan');
+const minValue = 1; // Minimum allowed value
+const maxValue = 4094; // Maximum allowed value
+
+vlan.addEventListener('input', function () {
+  let newValue = this.value; // Get current input
+
+  // Remove all characters except numbers, ".", "+" or "-".
+  newValue = newValue.replace(/[^0-9\-+\.]/g, "");
+
+  // Check if the remaining value is a valid number within the range
+  const parsedValue = parseFloat(newValue);
+  if (isNaN(parsedValue) || parsedValue < minValue || parsedValue > maxValue) {
+    newValue = ""; // Reset to empty if not a valid number or outside range
+  }
+
+  vlan.value = newValue;
+});
+
+
+//checkboxes logic check
+//checkboxes multiple selection (PRODUCT SELECTION)
+
+const checkboxes = document.querySelectorAll('[id^="change-phrase-checkbox"]'); // Select all checkboxes with IDs starting with "change-phrase-checkbox"
+
+const phraseSpan = document.getElementById("dropdownCheckboxButton");
+
+function buildFinalPhrase() {
+  let finalPhrase = "";
+  checkboxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      finalPhrase += checkbox.value + " "; // Append checkbox value with space
+    }
+  });
+  return finalPhrase.trim(); // Remove trailing space if any
+}
+
+// Event listener for all checkboxes (using a single function)
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener("click", function() {
+    phraseSpan.textContent = buildFinalPhrase();
+  });
+});
+
+
+
+// Event listener for all checkboxes (using a single function)
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener("click", function() {
+    phraseSpan.textContent = buildFinalPhrase();
+  });
+});
+
+
+//second dropdown menu (CPE SPEED)
+
+const checkboxescpe = document.querySelectorAll('[id^="cpespeed"]'); // Select all checkboxes with IDs starting with "change-phrase-checkbox"
+const phraseSpancpe = document.getElementById("dropdownCPE");
+
+function buildFinalPhrase2() {
+  let finalPhrase = "";
+  checkboxescpe.forEach(checkbox => {
+    if (checkbox.checked) {
+      finalPhrase = checkbox.value; // Append checkbox value with space
+    }
+  });
+  return finalPhrase.trim(); // Remove trailing space if any
+}
+
+// Event listener for all checkboxes (using a single function)
+
+checkboxescpe.forEach(checkbox => {
+  checkbox.addEventListener("click", function() {
+    phraseSpancpe.textContent = buildFinalPhrase2();
+    
+  });
+});
+
+//Third dropdown menu (METRO speed)
+
+const checkboxesmetro = document.querySelectorAll('[id^="metrospeed"]'); // Select all checkboxes with IDs starting with "change-phrase-checkbox"
+const phraseSpanmetro = document.getElementById("dropdownMETRO");
+
+function buildFinalPhrasemetro() {
+  let finalPhrase = "";
+  checkboxesmetro.forEach(checkbox => {
+    if (checkbox.checked) {
+      finalPhrase = checkbox.value; // Append checkbox value with space
+    }
+  });
+  return finalPhrase.trim(); // Remove trailing space if any
+}
+
+// Event listener for all checkboxes (using a single function)
+
+checkboxesmetro.forEach(checkbox => {
+  checkbox.addEventListener("click", function() {
+    phraseSpanmetro.textContent = buildFinalPhrasemetro();
+    
+  });
+});
