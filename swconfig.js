@@ -221,9 +221,67 @@
   };
 })(jQuery, window, document);
 
-function showMessage() {
-    alert("Você tem certeza que deseja enviar as seguintes configurações globais ao DM2104?");
+//Disables the button on forms until all the fields are not null
+
+function showscript() { 
+  const form = document.getElementById('formslist'); // Replace 'yourFormId' with your actual form ID
+  const submitButton = form.querySelector('[id="showMessageButton"]'); // Get the submit button
+  let validationCompleted = false; // Flag to track validation completion
+
+  form.addEventListener('input', () => {
+    submitButton.disabled = true; // Initially disable the button
+
+    const inputs = form.querySelectorAll('input:required, textarea:required'); // Select all required inputs and textareas
+
+    // Check if all required inputs have values
+    for (const input of inputs) {
+      if (!input.value.trim()) { // Check if value is empty after trimming whitespace
+        return; // Exit the loop if any input is empty
+      }
+    }
+
+    // If all required inputs have values, enable the button and set validationCompleted flag
+    
+    submitButton.disabled = false; // Initially disable the button 
+
+//Showmessagebutton logic to after the forms is rightly fullfiled it will
+//redirect the user to the script page after click  
+// function (event) allows it to be executed in following sequence
+
+const button = document.getElementById('showMessageButton')
+
+button.addEventListener("click", function(event) {
+  event.preventDefault();
+  window.location.href = "dm4370EDDmetroscript.html"; // Replace with your target URL
+});
+})
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function gotoscriptpage () {
 
@@ -252,11 +310,13 @@ for (const id of elementIds) {
 
     element.value = newInput;
   });
+
+  
 }
 
 // client input field exception
-const cliente = document.getElementById('cliente');
 
+const cliente = document.getElementById('cliente');
 cliente.addEventListener('input', function() {
   const allowedChars = /[A-Z0-9-_]/; // Allowed characters (adjust as needed)
   let newInput = '';
@@ -270,10 +330,12 @@ cliente.addEventListener('input', function() {
   cliente.value = newInput;
 });
 
-const vlan = document.getElementById('numerovlan');
+//Porta Rede Metro logic input field 
 
-vlan.addEventListener('input', function() {
-  const allowedChars = /[0-9]/; // Allowed characters (adjust as needed)
+const portmetro = document.getElementById('numerovlan metro');
+
+portmetro.addEventListener('input', function() {
+  const allowedChars = /[1-4]/; // Allowed characters (adjust as needed)
   let newInput = '';
 
   for (let char of this.value) { // Use 'this' to access the cliente element's value
@@ -281,18 +343,56 @@ vlan.addEventListener('input', function() {
       newInput += char;
     }
   }
-  vlan.value = newInput;
+
+  portmetro.value = newInput;
+});
+
+//Porta Rede Cpe logic input field 
+
+const portcpe = document.getElementById('numerovlan cpe');
+
+portcpe.addEventListener('input', function() {
+  const allowedChars = /[5-8]/; // Allowed characters (adjust as needed)
+  let newInput = '';
+
+  for (let char of this.value) { // Use 'this' to access the cliente element's value
+    if (allowedChars.test(char)) {
+      newInput += char;
+    }
+  }
+
+  portcpe.value = newInput;
+});
+
+// Número da Vlan input field
+
+const vlan = document.getElementById('numerovlan');
+const minValue = 2; // Minimum allowed value
+const maxValue = 4094; // Maximum allowed value
+
+vlan.addEventListener('input', function () {
+  let newValue = this.value; // Get current input
+
+  // Remove all characters except numbers, ".", "+" or "-".
+  newValue = newValue.replace(/[^0-9\-+\.]/g, "");
+
+  // Check if the remaining value is a valid number within the range
+  const parsedValue = parseFloat(newValue);
+  if (isNaN(parsedValue) || parsedValue < minValue || parsedValue > maxValue) {
+    newValue = ""; // Reset to empty if not a valid number or outside range
+  }
+
+  vlan.value = newValue;
 });
 
 
-
 //checkboxes logic check
-//checkboxes multiple selection
+//checkboxes multiple selection (PRODUCT SELECTION)
 
-const checkboxes = document.querySelectorAll('input[type="checkbox"]'); // Select all checkboxes
-const phraseSpan = document.getElementById("changeable-phrase");
+const checkboxes = document.querySelectorAll('[id^="change-phrase-checkbox"]'); // Select all checkboxes with IDs starting with "change-phrase-checkbox"
 
-// Function to build the final phrase based on checked checkboxes
+const phraseSpan = document.getElementById("dropdownCheckboxButton");
+
 function buildFinalPhrase() {
   let finalPhrase = "";
   checkboxes.forEach(checkbox => {
@@ -304,8 +404,134 @@ function buildFinalPhrase() {
 }
 
 // Event listener for all checkboxes (using a single function)
+
 checkboxes.forEach(checkbox => {
   checkbox.addEventListener("click", function() {
     phraseSpan.textContent = buildFinalPhrase();
   });
 });
+
+
+
+// Event listener for all checkboxes (using a single function)
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener("click", function() {
+    phraseSpan.textContent = buildFinalPhrase();
+  });
+});
+
+
+//second dropdown menu (CPE SPEED)
+
+const checkboxescpe = document.querySelectorAll('[id^="cpespeed"]'); // Select all checkboxes with IDs starting with "change-phrase-checkbox"
+const phraseSpancpe = document.getElementById("dropdownCPE");
+
+function buildFinalPhrase2() {
+  let finalPhrase = "";
+  checkboxescpe.forEach(checkbox => {
+    if (checkbox.checked) {
+      finalPhrase = checkbox.value; // Append checkbox value with space
+    }
+  });
+  return finalPhrase.trim(); // Remove trailing space if any
+}
+
+// Event listener for all checkboxes (using a single function)
+
+checkboxescpe.forEach(checkbox => {
+checkbox.addEventListener("click", function() {
+phraseSpancpe.textContent = buildFinalPhrase2();
+    
+  });
+});
+
+//Third dropdown menu (METRO speed)
+
+const checkboxesmetro = document.querySelectorAll('[id^="metrospeed"]'); // Select all checkboxes with IDs starting with "change-phrase-checkbox"
+const phraseSpanmetro = document.getElementById("dropdownMETRO");
+
+function buildFinalPhrasemetro() {
+  let finalPhrase = "";
+  checkboxesmetro.forEach(checkbox => {
+    if (checkbox.checked) {
+      finalPhrase = checkbox.value; // Append checkbox value with space
+    }
+  });
+  return finalPhrase.trim(); // Remove trailing space if any
+}
+
+// Event listener for all checkboxes (using a single function)
+
+checkboxesmetro.forEach(checkbox => {
+  checkbox.addEventListener("click", function() {
+    phraseSpanmetro.textContent = buildFinalPhrasemetro();
+    
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//DM4370EDDMETROSCRIPT.html
+

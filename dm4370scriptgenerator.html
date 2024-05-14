@@ -81,32 +81,49 @@
         </div>    
       </form>
       
+ <!-- some p phrases will be put outside the form class -->
 
-      <form class="max-w-sm mx-auto forms2">
+<p class="formsadviceproduct">Informar a Sigla do Produto + (Múltiplas seleções habilitadas)</p>
+<img class="circuitoicon" src="circuitoicon.gif">
+<p class="formsadvicecircuito">Caracteres permitidos: Letra, número, "_". Ex: RJO_5555555</p>
+<img class="hostnameicon" src="hostnameicon.gif">
+<p class="formsadvicecliente">Caracteres permitidos: Letra, número, "-", "_". Ex: RJO_5555555</p>
+<img class="produtoicon" src="produtoicon.gif">
+<p class="formsadvicevlanask">Se a porta SWITCH for tagueada (Trunk), marcar SIM</p>
+<img class="vlanicon" src="vlanicon.gif">
+<p class="formsadvicecpeask">Se a porta CPE for tagueada (Trunk), marcar SIM</p>
+<img class="redemetroicon" src="redemetroicon.gif">
+<p class="formsadviceredemetro">Porta de conexão com a Metro (1 a 4)</p>
+<img class="portaredemetroicon" src="portaredemetroicon.gif">
+<p class="formsadviceredecpe">Porta de conexão com a CPE (5 a 8)</p>
+<p class="formsadviceredecpespeed">Velocidade da conexão na porta WAN</p>
+<img class="velocidaderedecpe" src="velocidaderedecpeicon.gif">
+<p class="formsadviceredemetrospeed">Velocidade da conexão na porta LAN</p>
+<img class="velocidaderedemetroicon" src="velocidaderedemetroicon.gif">
+
+
+<form id="formslist" class="max-w-sm mx-auto forms2">
         <div id="additional-phrases"></div>
         <div class="mb-5">
-            <input type="text" id="circuito" name="name" maxlength="20" placeholder="Insira o número do Circuito" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>     
-            <p class="formsadvice"> Caracteres permitidos: Números, letras maiúsculas, "_". EX: RJO_5555555			
+            <input type="text" id="circuito" minlength="11" name="name" maxlength="20" placeholder="Insira o número do Circuito (Mínimo de 11 caracteres)" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>     
             </p>   
-            <input type="text" id="cliente" maxlength="20" name="name" placeholder="Insira o Hostname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>        
-            <p class="formsadvice">Caracteres permitidos: Números, letras maiúsculas, "-" "_". EX: OI-55555			
+            <input type="text" id="cliente" minlength="11" maxlength="20" name="" placeholder="Insira o Hostname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>        
             </p>
-            
-            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox" class="product shadow-sm text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  " type="button">
-                <span id="changeable-phrase">Escolha o Produto (Permite múltiplas escolhas)</span>
+			
+            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox" class="product shadow-sm text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400" type="button" required>
+                <span name="dropdown" id="changeable-phrase" >Escolha o Produto (Permite múltiplas escolhas)</span>
                 <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
                 </button>
                 
-                
                 <!-- Dropdown menu -->
 
                 <div id="dropdownDefaultCheckbox" class="change-phrase-checkbox z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
-                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200"  aria-labelledby="dropdownCheckboxButton">
                       <li>
                         <div class="flex items-center">
-                            <input type="checkbox" class="change-phrase-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" id="change-phrase-checkbox1" value="CN, ">
+                            <input type="checkbox" class="change-phrase-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" id="change-phrase-checkbox" value="CN, ">
                             <label for="checkbox-item-1" class=" ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">CN (IP Connect/IP Dedicado) </label>
                         </div>
                       </li>
@@ -194,24 +211,21 @@
             </p>
             </p>
 
-
-          
-
     <!--VLAN ASK-->
 
-    <input type="radio" id="radiocheck1" name="size" value="default">
+    <input type="radio" id="radiocheck1" name="size" value="default" required>
     <label id="textradio1" for="size-small">Sim</label>
-    <input type="radio" id="radiocheck2" name="size" value="default">
+    <input type="radio" id="radiocheck2" name="size" value="default" required>
     <label id="textradio2" for="size-small">Não</label>
 
     <!--CLAN ASK-->
 
-    <div class=" radiocheck3 flex items-center mb-4">
-        <input id="textradio3 default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+    <div class="radiocheck3 flex items-center mb-4">
+        <input id="textradio3 " type="radio" value="default" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required>
         <label for="default-radio-1" class="textradio3">Sim</label>
     </div>
     <div class="radiocheck4 flex items-center">
-        <input checked id="default-radio-2" type="radio" value="" name="default-radio" class=" w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+        <input id="default-radio-2" type="radio" value="default" name="default-radio" class=" w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
         <label for="default-radio-2" class="textradio4">Não</label>
     </div>
 
@@ -223,61 +237,69 @@
 
    <input type="text" id="numerovlan cpe" maxlength="1" name="name" placeholder="Informe a porta de conexão CPE" class="numbervlan3 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light " required>        
 
+<!--metrospeeddropdown-->
 
+<button id="dropdownMETRO" data-dropdown-toggle="dropdownDivider" class="productmetro text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><p class="textmetro">Escolha a velocidade da rede METRO</p><svg class="svgmetro w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6" required>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg>
+  </button>
+  
+  <!-- Dropdown menu -->
+  <div id="dropdownDivider" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+        <li>
+          <div class="flex items-center">
+              <input type="checkbox" class="change-phrase-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" id="metrospeed" value="1000FULL ">
+              <label for="checkbox-item-1" class=" ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">1000 FULL </label>
+          </div>
+        </li>
 
+        <li>
+          <div class="flex items-center">
+              <input type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" value="Negotiation "  id="metrospeed2" >
+              <label for="checkbox-item-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Negotiation</label>
+          </div>
+        </li>
+  </div>
 
+   <!--cpespeeddropdown-->
+   
+<button id="dropdownCPE" data-dropdown-toggle="dropdown" class="productcpe text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><p class="textcpe">Escolha a velocidade da porta CPE</p> <svg class="svgcpe w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6" required>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg>
+  </button>
+  
+  <!-- Dropdown menu -->
+  <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+        <li>
+          <div class="flex items-center">
+              <input type="checkbox" class="change-phrase-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" id="cpespeed" value="100FULL ">
+              <label for="checkbox-item-1" class=" ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">100 FULL </label>
+            </div>
+        </li>
 
+        <li>
+          <div class="flex items-center">
+              <input type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" value="Negotiation "  id="cpespeed2" >
+              <label for="checkbox-item-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Negotiation</label>
+          </div>
+        </li>
+      </ul>
+  </div>
+   
+   <!--numerovlanmenu-->
 
+    <input type="text" id="numerovlan" maxlength="4" name="name" placeholder="Informe o número da VLAN" class="numbervlan shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light " required>        
+    <p class="formsadvice textvlan">Informar número da Vlan (2 a 4094)			    
+    </div>
+    <!--TO NOT FORGET: function showscript() is first executed to block button -->
+        <!-- until any field inside the forms is not null -->
+<!-- after this it will execute the redirect function after click -->
+    <button type="submit" id="showMessageButton" onclick="showscript()" class="btn btn-primary sendconfig2">Deseja prosseguir com as configurações e gerar script?</button>
 
+  </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-            <!---->
-
-            <input type="text" id="numerovlan" maxlength="4" name="name" placeholder="Informe o número da VLAN" class="numbervlan shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light " required>        
-            <p class="formsadvice textvlan">Informar número da Vlan (2 a 4094)			
-          
-        </div>
-        <button id="showMessageButton" class="btn btn-primary sendconfig2" onclick="showMessage()" type="button">Deseja prosseguir com as configurações e gerar script?</button>
-    </form>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <div class="d-grid gap-2 d-md-block">
     </div>
     <div class="leftmenu2"></div>
@@ -286,4 +308,5 @@
     <script src="https://unpkg.com/imask@6/dist/imask.min.js"></script>
     <script src="swconfig.js"></script>
 </body>
+
 </html>

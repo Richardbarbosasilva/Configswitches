@@ -509,7 +509,7 @@
 
 
 .networkicon {
-margin-top: 160px;
+margin-top: 150px;
 
 }
 
@@ -517,18 +517,21 @@ margin-top: 160px;
 /* DM 4370 SCRIPTGENERATOR.HTML */
 
 .homepagescript {
-    height: 55px;
-    margin-top: -270px;
+    height: 60px;
+    margin-top: -260px;
     background: rgb(2, 0, 36);
     position: fixed;
     width: 1890px;
+    z-index: 100;
 }
 
 
+/* The following .logoswitchscript class moves both logo icon and the phrase down of it */
+/* use it instead of networkicon class, it is easier to change values */
 .logoswitchscript {
 
     font-weight: 900;
-    margin-left: 810px;
+    margin-left: 790px;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: -110px;
 
@@ -545,7 +548,7 @@ margin-top: 160px;
 
   .warningscript {
 
-    left: 560px !important;
+    left: 540px !important;
     bottom: 500px !important;
     text-align: justify;
     width: 700px; /* Adjust width as needed */
@@ -631,25 +634,215 @@ margin-top: 160px;
 }
 
 .forms2 {
-    left: 720px;
-    bottom: 20px !important;
+    left: 700px;
+    bottom: 100px !important;
     position: absolute;
 
 }
 
+/*right window advices !IMPORTANT */
+
 .formsadvice {
 
-    display: block;
+    display: flex;
     position: relative;
-    padding: 20px;
     width: 650px;
+    padding: 20px;
     left: 550px !important;
-    top: -55px;
+    top: 230px !important;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+    z-index: 0;
+}
+
+
+.formsadvicecircuito {
+
+    display: flex;
+    position: relative;
+    width: 650px;
+    padding: 20px;
+    left: 1250px !important;
+    top: -265px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+    z-index: 0;
+}
+
+
+
+.formsadvicecliente {
+    display: flex;
+    position: relative;
+    width: 650px;
+    padding: 20px;
+    left: 1250px !important;
+    margin-top: -225px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+    z-index: 0;
+}
+
+.formsadviceproduct {
+
+    display: flex;
+    position: relative;
+    width: 650px;
+    padding: 20px;
+    left: 1250px !important;
+    margin-top: 335px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+    z-index: 0;
+}
+
+
+.formsadvicevlanask {
+
+    display: flex;
+    position: relative;
+    width: 650px;
+    padding: 20px;
+    left: 1250px !important;
+    margin-top: 150px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+    z-index: 0;
+
+}
+
+.formsadvicecpeask {
+
+    display: flex;
+    position: relative;
+    width: 650px;
+    padding: 20px;
+    left: 1250px !important;
+    margin-top: 30px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+    z-index: 0;
+
+}
+
+.formsadviceredecpe {
+
+    display: flex;
+    position: relative;
+    width: 650px;
+    padding: 20px;
+    left: 1250px !important;
+    margin-top: 270px;
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color:#fff;
 
+}
+
+.formsadviceredecpespeed {
+
+    display: flex;
+    position: relative;
+    width: 650px;
+    padding: 20px;
+    left: 1250px !important;
+    margin-top: 40px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+
+}
+
+.formsadviceredemetrospeed {
+
+    display: flex;
+    position: relative;
+    width: 650px;
+    padding: 20px;
+    left: 1250px !important;
+    margin-top: 40px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+    z-index: 0;
+
+}
+
+/* First 2 Right advices (separated from above)  */
+
+#circuito {
+
+    top: -210px;
+    display: block;
+    position: absolute;
+    z-index: 0;
+
+}
+
+#cliente {
+
+    top: -110px;
+    display: block;
+    position: absolute;
+    z-index: 0;
+}
+
+/* NUMBER VLAN INPUT FIELD */
+
+.formsadvicevlan {
+
+    display: block;
+    position: absolute;
+    width: 650px;
+    left: 550px !important;
+    top: 105px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+}
+
+.formsadvicenumbervlan {
+ 
+    display: block;
+    position: absolute;
+    width: 650px;
+    left: 550px !important;
+    top: 185px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+
+}
+
+.formsadviceredemetro {
+
+     display: block;
+    position: absolute;
+    width: 650px;
+    left: 1270px !important;
+    top: 1070px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color:#fff;
+    z-index: 0;
 }
 
 .formsid {
@@ -662,6 +855,7 @@ margin-top: 160px;
     font-size: 16px;
     left: -250px;
     color: #fff;
+    z-index: 0;
 
 }
 
@@ -673,35 +867,45 @@ margin-top: 160px;
     bottom: 200px;
     position: absolute;
     width: 1870px;
-    height: 1150px;
-    background-color: rgb(2, 0, 36);
+    height: 1280px;
+    background-color: rgb(15, 28, 85);
     z-index: -1000 !important;
     margin-left: -100px;
     border-radius: 0.7rem;
 }
 
     .sendconfig2 {
-    border-color: rgb(81, 77, 153); 
-    background: linear-gradient(90deg, rgb(7, 2, 114) 0%, rgba(9,9,121,1) 35%, rgba(10,62,128,1) 100%);
-    margin-left: -45px;
+    border-color: rgb(255, 255, 255); 
+    margin-left: -35px;
     width: 450px;
     position: absolute;
-    margin-top: 650px;
+    margin-top: 680px;
     color: white;
-    }
 
-    /* numbervlan field */
+}
+
+
+.sendconfig2:hover {
+
+    border-width: 2px;
+    border-color: black;
+    background-color: rgb(15, 140, 243);
+
+}
+
+    /* numbervlan field = VLAN */
+
     .numbervlan {
         bottom: -170px !important;
         position: absolute;
+        z-index: 0;
     }
 
     .product {
         background-color: #fff !important;
         color: grey !important;
         height: 40px;
-        font-weight: 400;
-        
+        font-weight: 400;   
     }
 
     .product:hover {
@@ -739,7 +943,7 @@ margin-top: 160px;
         z-index: -1;
         margin-left: 50px;
         display: block;
-        margin-top: -265px;
+        margin-top: -255px;
         position: fixed;
         z-index: 100;
     }
@@ -751,56 +955,65 @@ margin-top: 160px;
     color: white !important;
     position:relative;
     padding: 20px;
-    top: 79px !important;
+    top: 90px !important;
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    z-index: 0;
  }
 
  #textradio2 {
 
     position: absolute;
     color: white !important;
-    position: relative;
     padding: 20px;
-    top: 79px !important;
+    top: 90px !important;
     margin-left: 220px;
     font-family: Arial, Helvetica, sans-serif;
+    z-index: 0;
  }
 
  
  
  #radiocheck1 {
 
-    top: 315px !important;
+    top: 114px !important;
     position: absolute;
     cursor: pointer;
+    z-index: 0;
  }
 
   
  #radiocheck2 {
 
-    margin-top:104px;
+    margin-top:115px;
     position: absolute;
     margin-left: 285px;
     cursor: pointer;
+    z-index: 0;
  }
 
 #dropdownCheckboxButton {
 
     margin-top: 0px;
     position: absolute;
+    z-index: 0;
 }
 
 .textradio3{
-
-margin-left: 20px !important;
+position: absolute;
+margin-left: 32px !important;
+top: -5px;
+font-size: 17px;
+z-index: 0;
 }
 
 
 .textradio4 {
-
-    margin-left: -58px !important;
-    margin-top: 6px;
+    position: absolute;
+    margin-left: -48px !important;
+    top: -5px;
+    font-size: 17px;
+    z-index: 0;
 
 }
 
@@ -808,18 +1021,19 @@ margin-left: 20px !important;
 
  .radiocheck3 {
 
-    top:426px !important;
+    top: 210px !important;
     left: 0px;
     position: absolute;
     cursor: pointer;
     color: white !important;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+    z-index: 0;
  }
   
  .radiocheck4 {
     color: white;
-    margin-top:144px;
+    margin-top:138px;
     position: absolute;
     margin-left: 365px;
     cursor: pointer;
@@ -827,6 +1041,7 @@ margin-left: 20px !important;
     width: 125px !important;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
+    z-index: 0;
 
  }
 
@@ -859,13 +1074,62 @@ position: absolute;
 }
 
 /* numbervlan2 = cpe */
-.numbervlan2{
+
+.numbervlan2 {
     position: absolute;
     display: block;
-    top: 650px;
+    top: 420px;
+    z-index: 0;
 }
 
-.cpe {
+
+
+/* Metro speed selection */
+
+    .metro {
+    margin-top: 100px !important;
+    position: absolute;
+    background-color: red;
+
+    }
+
+    .numbervlan3{
+        position:absolute;
+        display: block;
+        top: 530px !important;
+        z-index: 0;
+
+    }
+
+    .productmetro {
+        background-color: #fff !important;
+        color: grey !important;
+        height: 40px;
+        position: absolute;
+        top: 740px;
+        left: 0px;
+        width: 385px;
+        font-weight: 400;
+        position: absolute;
+        z-index: 0;
+        
+    }
+
+    .svgmetro {
+
+        position: absolute;
+        left: 0px;
+        top: 29px;
+    }
+
+    .textmetro {
+        margin-left:-35px;
+        font-weight: 400;
+    }
+
+
+/* Cpe speed selection */
+    .cpe {
     margin-top: 100px !important;
     position: absolute;
     background-color: red;
@@ -879,3 +1143,228 @@ position: absolute;
         background-color: red;
 
     }
+
+    .productcpe {
+        background-color: #fff !important;
+        color: grey !important;
+        height: 40px;
+        position: absolute;
+        top: 640px;
+        left: 0px;
+        width: 385px;
+        font-weight: 400;
+        z-index: 0;
+        
+    }
+
+    .svgcpe {
+
+        position: absolute;
+        left: 0px;
+        top: 29px;
+    }
+
+    .textcpe {
+        margin-left:-50px;
+        font-weight: 400;
+    }
+
+    /* phrase of choose product*/
+
+    #changeable-phrase {
+        margin-left: -70px;
+    }
+
+
+/* formsicons */
+
+.circuitoicon {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top:415px;
+    z-index: -10;
+    left:600px;
+}
+
+.hostnameicon {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top:515px;
+    z-index: -10;
+    left:600px;
+
+}
+
+.produtoicon {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top:615px;
+    z-index: -10;
+    left:600px;
+
+}
+
+.vlanicon {
+
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top:940px;
+    z-index: -10;
+    left:600px;
+}
+
+.redemetroicon {
+
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top:1050px;
+    z-index: -10;
+    left:600px;
+}
+
+.portaredemetroicon {
+
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top:1155px !important;
+    z-index: -10;
+    left:600px;
+
+}
+
+.velocidaderedecpe {
+
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top:1260px;
+    z-index: -10;
+    left:600px;
+}
+
+.velocidaderedemetroicon {
+
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top:1370px;
+    z-index: -10;
+    left:600px;
+}
+
+/* Script Generator */
+
+.scripttext {
+    display: block;
+    font-size: 15px;
+    left: 850px;
+    position: relative;
+    color: white;
+    background-color:; 
+}
+
+.backgroundscript {
+
+    left: 0px;
+    top: 0px;
+    bottom: 200px;
+    position: absolute;
+    width: 2900px;
+    height: 1780px;
+    background-color:black;
+    z-index: -1000 !important;
+    margin-left: -100px;
+   
+}
+
+.scripttitle {
+
+    font-size: 26px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    text-decoration: underline;
+}
+
+.homepagescriptgenerator {
+
+    height: 60px;
+    margin-top: -0px;
+    background: rgb(2, 0, 36);
+    position: fixed;
+    width: 1890px;
+    z-index: 100;
+}
+
+#clickipnavbarswitchconfigscriptgenerator {
+
+    width: 120px;
+    height: 45px;
+    z-index: 100;
+    margin-left: 50px;
+    display: block;
+    margin-top: 5px;
+    position: absolute;
+
+}
+
+.homepagebarscriptgenerator {
+position: relative;
+    left: 450px !important;
+    font-size: large;
+}
+
+.houseicon {
+
+    position: absolute;
+    left: 1200px;
+    top: 2px;
+}
+
+.profilescriptgenerator {
+    margin-left: -15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
