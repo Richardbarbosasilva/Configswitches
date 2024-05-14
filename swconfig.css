@@ -1258,17 +1258,77 @@ position: absolute;
     left:600px;
 }
 
+/* Script Generator */
 
+.scripttext {
+    display: block;
+    font-size: 15px;
+    left: 850px;
+    position: relative;
+    color: white;
+    background-color:; 
+}
 
+.backgroundscript {
 
+    left: 0px;
+    top: 0px;
+    bottom: 200px;
+    position: absolute;
+    width: 2900px;
+    height: 1780px;
+    background-color:black;
+    z-index: -1000 !important;
+    margin-left: -100px;
+   
+}
 
+.scripttitle {
 
+    font-size: 26px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    text-decoration: underline;
+}
 
+.homepagescriptgenerator {
 
+    height: 60px;
+    margin-top: -0px;
+    background: rgb(2, 0, 36);
+    position: fixed;
+    width: 1890px;
+    z-index: 100;
+}
 
+#clickipnavbarswitchconfigscriptgenerator {
 
+    width: 120px;
+    height: 45px;
+    z-index: 100;
+    margin-left: 50px;
+    display: block;
+    margin-top: 5px;
+    position: fixed;
 
+}
 
+.homepagebarscriptgenerator {
+position: relative;
+    left: 450px !important;
+    font-size: large;
+}
+
+.houseicon {
+
+    position: absolute;
+    left: 1200px;
+    top: 2px;
+}
+
+.profilescriptgenerator {
+    margin-left: -15px;
+}
 
 
 

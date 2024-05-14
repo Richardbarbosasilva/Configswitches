@@ -221,9 +221,44 @@
   };
 })(jQuery, window, document);
 
-function showMessage() {
-    alert("Você tem certeza que deseja enviar as seguintes configurações globais ao DM2104?");
+//Disables the button on forms until all the fields are not null
+//window.onload statement makes sure the script below runs on the start of the page without cheats 
+
+window.onload = function showscript() { 
+  const form = document.getElementById('formslist'); // Replace 'yourFormId' with your actual form ID
+  const submitButton = form.querySelector('[id="showMessageButton"]'); // Get the submit button
+  let validationCompleted = false; // Flag to track validation completion
+
+  form.addEventListener('input', () => {
+    submitButton.disabled = true; // Initially disable the button
+
+    const inputs = form.querySelectorAll('input:required, textarea:required'); // Select all required inputs and textareas
+
+    // Check if all required inputs have values
+    for (const input of inputs) {
+      if (!input.value.trim()) { // Check if value is empty after trimming whitespace
+        return; // Exit the loop if any input is empty
+      }
+    }
+    
+    // If all required inputs have values, enable the button and set validationCompleted flag
+    
+    submitButton.disabled = false; // Initially disable the button 
+
+//Showmessagebutton logic to after the forms is rightly fullfiled it will
+//redirect the user to the script page after click  
+// function (event) allows it to be executed in following sequence
+
+const button = document.getElementById('showMessageButton')
+
+button.addEventListener("click", function(event) {
+  event.preventDefault();
+  window.location.href = "dm4370EDDmetroscript.html"; // Replace with your target URL
+});
+})
+
 }
+
 
 function gotoscriptpage () {
 
@@ -252,12 +287,13 @@ for (const id of elementIds) {
 
     element.value = newInput;
   });
+
+  
 }
 
 // client input field exception
 
 const cliente = document.getElementById('cliente');
-
 cliente.addEventListener('input', function() {
   const allowedChars = /[A-Z0-9-_]/; // Allowed characters (adjust as needed)
   let newInput = '';
@@ -308,7 +344,7 @@ portcpe.addEventListener('input', function() {
 // Número da Vlan input field
 
 const vlan = document.getElementById('numerovlan');
-const minValue = 1; // Minimum allowed value
+const minValue = 2; // Minimum allowed value
 const maxValue = 4094; // Maximum allowed value
 
 vlan.addEventListener('input', function () {
@@ -381,8 +417,8 @@ function buildFinalPhrase2() {
 // Event listener for all checkboxes (using a single function)
 
 checkboxescpe.forEach(checkbox => {
-  checkbox.addEventListener("click", function() {
-    phraseSpancpe.textContent = buildFinalPhrase2();
+checkbox.addEventListener("click", function() {
+phraseSpancpe.textContent = buildFinalPhrase2();
     
   });
 });
@@ -410,3 +446,69 @@ checkboxesmetro.forEach(checkbox => {
     
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//DM4370EDDMETROSCRIPT.html
+
