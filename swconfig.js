@@ -222,8 +222,10 @@
 })(jQuery, window, document);
 
 //Disables the button on forms until all the fields are not null
+//window.onload statement makes sure the script below runs on the start of the page without cheats 
 
-function showscript() { 
+window.onload = function showscript() { 
+
   const form = document.getElementById('formslist'); // Replace 'yourFormId' with your actual form ID
   const submitButton = form.querySelector('[id="showMessageButton"]'); // Get the submit button
   let validationCompleted = false; // Flag to track validation completion
@@ -252,35 +254,11 @@ const button = document.getElementById('showMessageButton')
 
 button.addEventListener("click", function(event) {
   event.preventDefault();
-  window.location.href = "dm4370EDDmetroscript.html"; // Replace with your target URL
+  window.location.href = "http://127.0.0.1:5000"; // Replace with your target URL
 });
 })
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function gotoscriptpage () {
@@ -472,6 +450,37 @@ checkboxesmetro.forEach(checkbox => {
 
 
 
+const form = document.getElementById("formslist");
+const resultWindow = document.getElementById("result-window");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const circuito = document.getElementById("circuito").value;
+  const cliente = document.getElementById("cliente").value;
+
+  const data = {
+    circuito: circuito,
+    cliente: cliente
+  };
+
+  // AJAX request
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "/teste.py", true); // Replace with your server-side script URL
+  xhr.setRequestHeader("Content-Type", "application/json"); // Send data as JSON
+
+  xhr.onload = function() {
+    if (xhr.status === 200) { // Check for successful response
+      const responseText = xhr.responseText;
+      resultWindow.textContent = responseText; // Display response text in the result window
+    } else {
+      console.error("Error:", xhr.statusText);
+      resultWindow.textContent = "An error occurred.";
+    }
+  };
+
+  xhr.send(JSON.stringify(data)); // Send data as JSON string
+});
 
 
 

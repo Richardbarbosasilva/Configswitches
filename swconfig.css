@@ -1309,7 +1309,7 @@ position: absolute;
     margin-left: 50px;
     display: block;
     margin-top: 5px;
-    position: absolute;
+    position: fixed;
 
 }
 
